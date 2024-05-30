@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Toaster } from 'react-hot-toast';
 
 import './App.css';
@@ -64,7 +64,7 @@ function App() {
 		setPage(page + 1);
 	};
 
-	const isActive = page === totalPages;
+	const isActive = useMemo(() => page === totalPages, [page, totalPages]);
 
 	const openModal = () => {
 		setIsOpen(true);
