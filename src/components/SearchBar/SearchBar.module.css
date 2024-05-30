@@ -1,0 +1,30 @@
+.searchForm {
+	display: flex;
+	justify-content: center;
+	background-color: #213547;
+	border-radius: 8px;
+	padding: 12px;
+	margin-bottom: 20px;
+}
+
+.searchInput {
+	border-radius: 8px;
+	border-style: none;
+	margin-right: 20px;
+	padding-block: 8px;
+	padding-inline: 12px;
+	min-width: 320px;
+}
+
+@media (prefers-color-scheme: light) {
+	.searchForm {
+		background-color: #f9f9f9;
+		color: #213547;
+	}
+	.searchForm button {
+		background-color: #fff;
+	}
+	.searchForm button:hover {
+		background-color: #f9f9f9;
+	}
+}

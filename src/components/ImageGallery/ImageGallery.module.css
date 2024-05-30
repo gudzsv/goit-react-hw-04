@@ -1,0 +1,22 @@
+.itemsContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+	margin-bottom: 20px;
+}
+
+.cardItem {
+	border: 1px solid #646cff;
+	border-radius: 8px;
+	width: 300px;
+	background-color: #213547;
+	cursor: pointer;
+}
+
+@media (prefers-color-scheme: light) {
+	.cardItem {
+		background-color: #f9f9f9;
+		color: #213547;
+	}
+}
