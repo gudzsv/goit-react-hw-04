@@ -6,7 +6,11 @@
 
 Сервіс пошуку зображень
 
-!VIDEO
+
+
+https://github.com/gudzsv/goit-react-hw-04/assets/49489543/5a4d79ef-bc5b-4b5b-8948-9de71e4a276b
+
+
 
 В цьому завданні, за допомогою HTTP-запитів, ти будеш отримувати зображення з сервісу зображень [Unsplash](https://unsplash.com/developers).
 
