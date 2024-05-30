@@ -8,7 +8,7 @@ axios.defaults.headers = {
 	'Accept-Version': 'v1',
 };
 axios.defaults.params = {
-	per_page: 12,
+	per_page: 8,
 	orientation: 'landscape',
 };
 

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Toaster } from 'react-hot-toast';
 
 import './App.css';
@@ -23,23 +23,7 @@ function App() {
 	const [modalImage, setModalImage] = useState('');
 	const [altDescription, setAltDescription] = useState('');
 
-	function openModal() {
-		setIsOpen(true);
-	}
-
-	// function afterOpenModal() {
-	//   // references are now sync'd and can be accessed.
-	//   subtitle.style.color = '#f00';
-	// }
-
-	function closeModal() {
-		setIsOpen(false);
-	}
-
-	function updateModalStateData(src, alt) {
-		setModalImage(src);
-		setAltDescription(alt);
-	}
+	const ref = useRef();
 
 	useEffect(() => {
 		if (queryValue === '') return;
@@ -64,6 +48,12 @@ function App() {
 		handleSearch();
 	}, [page, queryValue]);
 
+	useEffect(() => {
+		if (page === 1) return;
+
+		ref.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+	}, [page, gallery]);
+
 	const handleQuery = (newQuery) => {
 		setQueryValue(newQuery);
 		setGallery([]);
@@ -76,8 +66,21 @@ function App() {
 
 	const isActive = page === totalPages;
 
+	const openModal = () => {
+		setIsOpen(true);
+	};
+
+	const closeModal = () => {
+		setIsOpen(false);
+	};
+
+	const updateModalStateData = (src, alt) => {
+		setModalImage(src);
+		setAltDescription(alt);
+	};
+
 	return (
-		<>
+		<div ref={ref}>
 			<SearchBar onSubmit={handleQuery} />
 			{gallery.length > 0 && (
 				<ImageGallery
@@ -98,7 +101,7 @@ function App() {
 				alt={altDescription}
 			/>
 			<Toaster position='top-right' reverseOrder={true} />
-		</>
+		</div>
 	);
 }
 

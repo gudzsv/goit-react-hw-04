@@ -10,7 +10,6 @@
 	border: 1px solid #535bf2;
 	border-radius: 8px;
 	background-color: #213547;
-	max-width: 70%;
 }
 
 .overlay {
@@ -29,6 +28,9 @@
 }
 .modalImg {
 	border-radius: 8px;
+	max-height: 70vh;
+	max-width: 70vw;
+	display: block;
 }
 
 .modalText {
